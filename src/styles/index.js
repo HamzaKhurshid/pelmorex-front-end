@@ -20,3 +20,9 @@ export const ResumeColumn = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+export const ListingFilters = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px
+`;

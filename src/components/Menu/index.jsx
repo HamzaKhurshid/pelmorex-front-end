@@ -2,7 +2,8 @@ import { Menu } from 'antd';
 import React from 'react';
 import { MENU_ITEMS } from '../../constants';
 
-const MenuNavigation = ({ selectedMenuItem, setValues }) => {
+const MenuNavigation = ({ setValues, values }) => {
+  const { selectedMenuItem } = values;
   return (
     <Menu
       style={{ height: '100%', width: '250px' }}
@@ -10,7 +11,7 @@ const MenuNavigation = ({ selectedMenuItem, setValues }) => {
       mode="inline"
       theme="dark"
       items={MENU_ITEMS}
-      onSelect={({ key }) => setValues({ selectedMenuItem: [key] })}
+      onSelect={({ key }) => setValues({ ...values, selectedMenuItem: [key] })}
     />
   );
 };

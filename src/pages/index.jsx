@@ -8,18 +8,22 @@ import About from '../components/About';
 
 const AppContainer = () => {
   const [values, setValues] = useState({
-    selectedMenuItem: ['about']
+    selectedMenuItem: ['about'],
+    playersList: [],
+    columnToBeFiltered: 'last_name',
+    isSortingApplied: false,
+    filterKeyword: ''
   });
 
   return (
     <Container>
-      <Menu {...values} setValues={setValues} />
+      <Menu values={values} setValues={setValues} />
       <ContentContainer>
         {
           values.selectedMenuItem.includes('about') ? 
           <About />
           :
-          <List />
+          <List setValues={setValues} values={values} />
         }
       </ContentContainer>
     </Container>
