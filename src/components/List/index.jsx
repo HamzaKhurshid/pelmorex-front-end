@@ -1,43 +1,7 @@
-import { Button, Table, Tag, Input } from 'antd';
+import { Button, Table, Input } from 'antd';
 import { useEffect } from 'react';
+import { TABLE_COLUMNS } from '../../constants';
 import { ListingFilters } from '../../styles';
-
-const columns = [
-  {
-    title: 'First Name',
-    dataIndex: 'first_name',
-    key: 'first_name',
-    render: (text) => <a>{text}</a>,
-  },
-  {
-    title: 'Last Name',
-    dataIndex: 'last_name',
-    key: 'last_name',
-  },
-  {
-    title: 'Position',
-    key: 'position',
-    dataIndex: 'position',
-    render: (value) => value || 'N/A'
-
-  },
-  {
-    title: 'Team',
-    key: 'city',
-    dataIndex: 'city'
-  },
-  {
-    title: 'Conference',
-    key: 'conference',
-    dataIndex: 'conference',
-    render: (value) => <Tag color={value === 'West' ? '#41A63D' : '#F83F3F'}>{value}</Tag>
-  },
-  {
-    title: 'Division',
-    key: 'division',
-    dataIndex: 'division'
-  }
-];
 
 const List = ({ setValues, values }) => {
   
@@ -104,7 +68,7 @@ const List = ({ setValues, values }) => {
       <Table 
         bordered 
         pagination={false} 
-        columns={columns} 
+        columns={TABLE_COLUMNS} 
         dataSource={parsedData} 
       />
     </div>
