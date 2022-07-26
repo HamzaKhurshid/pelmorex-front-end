@@ -19,6 +19,7 @@ export const ResumeRow = styled.div`
 export const ResumeColumn = styled.div`
   display: flex;
   flex-direction: column;
+  row-gap: 10px
 `;
 
 export const ListingFilters = styled.div`
