@@ -1,6 +1,8 @@
+import AppContainer from "./pages"
+
 const App = () => {
   return (
-    <div>Hello world!</div>
+    <AppContainer />
   );
 }
 
