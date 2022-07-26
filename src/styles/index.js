@@ -6,5 +6,17 @@ export const Container = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  padding: 40px
+  padding: 40px;
+  width: 100%;
+  overflow-y: scroll;
+`;
+
+export const ResumeRow = styled.div`
+  display: flex;
+  column-gap: 70px
+`;
+
+export const ResumeColumn = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
