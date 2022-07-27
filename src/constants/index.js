@@ -9,11 +9,13 @@ export const MENU_ITEMS = [
     key: 'about',
     icon: <UserOutlined />,
     label: 'About',
+    'data-testid': 'about-menu-item'
   },
   {
     key: 'list',
     icon: <TableOutlined />,
     label: 'List',
+    'data-testid': 'list-menu-item'
   }
 ];
 

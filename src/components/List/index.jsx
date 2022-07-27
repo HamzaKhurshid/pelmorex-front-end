@@ -19,7 +19,7 @@ const List = ({ setValues, values }) => {
 
   const parsePlayersData = () => {
     let playersList = [];
-    playersList = values.playersList.map(({ team, last_name, first_name, position }, index) => {
+    playersList = values?.playersList?.map(({ team, last_name, first_name, position }, index) => {
       const { division, city, conference } = team || {};
       return {
         key: index,
@@ -32,10 +32,10 @@ const List = ({ setValues, values }) => {
       };
     });
   
-    if (values.isSortingApplied) {
+    if (values?.isSortingApplied) {
       playersList = sortPlayers(playersList);
     }
-    if (values.filterKeyword.trim()) {
+    if (values?.filterKeyword.trim()) {
       playersList = filterPlayers(playersList);
     }
     return playersList;
@@ -55,13 +55,13 @@ const List = ({ setValues, values }) => {
   return (
     <div>
       <ListingFilters>
-        <Button onClick={() => setValues({ ...values, isSortingApplied: !values.isSortingApplied })} type='primary'>
-          {values.isSortingApplied ? 'Remove Sorting' : 'Sort by Last Name' }
+        <Button data-testid='sort-button' onClick={() => setValues({ ...values, isSortingApplied: !values.isSortingApplied })} type='primary'>
+          {values?.isSortingApplied ? 'Remove Sorting' : 'Sort by Last Name' }
         </Button>
         <Input
           style={{ width: 400 }}
           onChange={({ target }) => setValues({ ...values, filterKeyword: target.value })} 
-          value={values.filterKeyword} 
+          value={values?.filterKeyword} 
           placeholder='Search by Last Name' 
         />
       </ListingFilters>
